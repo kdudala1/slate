@@ -1,0 +1,1002 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for Operational Data for VMware Tanzu"
+        >
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#compatible-tanzu-products-platforms" class="toc-h2 toc-link" data-title="Compatible Tanzu Products/Platforms">Compatible Tanzu Products/Platforms</a>
+                  </li>
+                  <li>
+                    <a href="#what-data-is-collected" class="toc-h2 toc-link" data-title="What data is collected?">What data is collected?</a>
+                  </li>
+                  <li>
+                    <a href="#where-is-it-stored-and-sent" class="toc-h2 toc-link" data-title="Where is it stored and sent?">Where is it stored and sent?</a>
+                  </li>
+                  <li>
+                    <a href="#inspecting-collected-data" class="toc-h2 toc-link" data-title="Inspecting collected data">Inspecting collected data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#architecture" class="toc-h1 toc-link" data-title="Architecture">Architecture</a>
+          </li>
+          <li>
+            <a href="#installation" class="toc-h1 toc-link" data-title="Installation">Installation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#prerequisites" class="toc-h2 toc-link" data-title="Prerequisites">Prerequisites</a>
+                  </li>
+                  <li>
+                    <a href="#deploying" class="toc-h2 toc-link" data-title="Deploying">Deploying</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#usage" class="toc-h1 toc-link" data-title="Usage">Usage</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data" class="toc-h2 toc-link" data-title="/data">/data</a>
+                  </li>
+                  <li>
+                    <a href="#info" class="toc-h2 toc-link" data-title="/info">/info</a>
+                  </li>
+                  <li>
+                    <a href="#logs" class="toc-h2 toc-link" data-title="/logs">/logs</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the documentation for Operational Data for VMware Tanzu. This software enables easy collection of consumption information from your Tanzu products to enable you to meet your reporting obligations and ensure compliance with VMware&#39;s Terms of Service.</p>
+<h2 id='compatible-tanzu-products-platforms'>Compatible Tanzu Products/Platforms</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Units of Measure</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Tanzu Application Platform</td>
+<td>Component and Workload vCPUs</td>
+</tr>
+<tr>
+<td>Tanzu Mission Control</td>
+<td>Total Cluster Capacity in vCPUs</td>
+</tr>
+<tr>
+<td>Tanzu Kubernetes Grid</td>
+<td>Total Cluster Capacity in vCPUs</td>
+</tr>
+<tr>
+<td>Tanzu Application Service*</td>
+<td>Application Instances, Physical Cores in Use</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+*Please note that Tanzu Application Service uses a different collector, the documentation for which can be found here .
+</aside>
+<h2 id='what-data-is-collected'>What data is collected?</h2>
+<p>The Operational Data Collector is designed to collect an extremely limited set of data that is indispensable for billing purposes. Currently, the tool collects the following data on an hourly basis:</p>
+
+<table><thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cluster_capacity_vcpus</td>
+<td>The total cluster capacity in vcpus</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Sensitive classes of data such as personally identifying information (PII) and IP addresses are not collected or stored. Only data required for billing is used.
+</aside>
+<h2 id='where-is-it-stored-and-sent'>Where is it stored and sent?</h2>
+<p>The data is stored locally in a SQLite database and data can be manually or automatically synced with VMware&#39;s Operational Data Lake. </p>
+<h2 id='inspecting-collected-data'>Inspecting collected data</h2>
+<p>Data being collected and stored by the Operational Data for VMware Tanzu service can be queried by accessing the <code>/data</code> endpoint and generating a csv dump or by directly accessing the backing SQLite database.</p>
+<h1 id='architecture'>Architecture</h1>
+<p>The Operational Data for VMware Tanzu service consists of the following components:</p>
+
+<ul>
+<li>A SQLite database containing hourly consumption data for Tanzu products.</li>
+<li>An agent that syncs data with VMware&#39;s Operational Data Lake.</li>
+<li>A Tanzu CLI plugin to facilitate configuration, inspection and emission.</li>
+</ul>
+<h1 id='installation'>Installation</h1>
+<p>A Tanzu CLI plugin that manages all operations pertaining to Operational Data is currently in development. In the meantime, we recommend installing via the provided install script.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>.../scripts/tanzu-operational-usage-service-install-script.sh
+</code></pre></div><h2 id='prerequisites'>Prerequisites</h2>
+<ul>
+<li><code>kubectl</code></li>
+<li><code>kapp</code></li>
+<li>Tanzu CLI with the Telemetry plugin</li>
+<li>Access to the <code>dev.registry.pivotal.io</code> registry</li>
+<li>Default <code>StorageClass</code> specified for the cluster</li>
+</ul>
+
+<aside class="warning">
+A default `StorageClass` must be specified for the cluster and is needed to deploy the SQLite database.
+</aside>
+<h2 id='deploying'>Deploying</h2>
+<blockquote>
+<p>Copy and paste this script and then run <code>chmod +x</code> to run.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c">#!/bin/bash</span>
+
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> --- Install script for Tanzu Operational Data Service (TODS) --- </span><span class="se">\n\n</span><span class="s2">"</span>
+
+<span class="nv">TODS_VERSION</span><span class="o">=</span><span class="s2">"latest"</span>
+
+<span class="nb">echo</span> <span class="s2">"TODS needs to create a Secret to pull the image from the 'dev.registry.pivotal.io' registry"</span>
+<span class="nb">echo</span> <span class="s2">"Please enter credentials for the 'dev.registry.pivotal.io' registry"</span>
+
+<span class="nb">echo</span> <span class="s2">"Username: "</span>
+<span class="nb">read</span> <span class="nt">-r</span> USERNAME
+
+<span class="nb">echo</span> <span class="s2">"Password: "</span>
+<span class="nb">read</span> <span class="nt">-rs</span> PASSWORD
+
+<span class="nv">AUTH</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"</span><span class="k">${</span><span class="nv">USERNAME</span><span class="k">}</span><span class="s2">:</span><span class="k">${</span><span class="nv">PASSWORD</span><span class="k">}</span><span class="s2">"</span> | <span class="nb">base64</span><span class="si">)</span>
+
+<span class="nv">DOCKER_CONFIG_JSON</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+{
+  "auths": {
+    "dev.registry.pivotal.io": {
+      "username":"</span><span class="nv">$USERNAME</span><span class="sh">",
+      "password":"</span><span class="nv">$PASSWORD</span><span class="sh">",
+      "auth":"</span><span class="nv">$AUTH</span><span class="sh">"
+    }
+  }
+}
+</span><span class="no">EOF
+</span><span class="si">)</span>
+
+<span class="nv">DOCKER_CONFIG_JSON_BASE64</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"</span><span class="nv">$DOCKER_CONFIG_JSON</span><span class="s2">"</span> | <span class="nb">base64</span> <span class="si">)</span>
+
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Registry credentials set</span><span class="se">\n\n</span><span class="s2">"</span>
+
+<span class="nb">echo</span> <span class="s2">"TODS needs an Entitlement Account Number (EAN) to work"</span>
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"This EAN will be on a ConfigMap in the vmware-system-telemetry namespace</span><span class="se">\n</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"Do you want to make the ConfigMap and add the EAN now? (y/n) "</span>
+<span class="nb">read </span>RESPONSE
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$RESPONSE</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$RESPONSE</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"y"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Do you want to use the default EAN of '987654321'? (y/n): "</span>
+    <span class="nb">read </span>DEFAULT_EAN
+        <span class="k">case</span> <span class="nv">$DEFAULT_EAN</span> <span class="k">in
+            </span>y|yes<span class="p">)</span>
+                <span class="nb">echo</span> <span class="s2">"Running: tanzu telemetry update --entitlement-account-number 987654321"</span>
+                tanzu telemetry update <span class="nt">--entitlement-account-number</span> 987654321
+                <span class="p">;;</span>
+            n|no<span class="p">)</span>
+                <span class="nb">echo</span> <span class="s2">"Enter the non-default EAN: "</span>
+                <span class="nb">read </span>NON_DEFAULT_EAN
+                <span class="nb">echo</span> <span class="s2">"Running: tanzu telemetry update --entitlement-account-number </span><span class="nv">$NON_DEFAULT_EAN</span><span class="s2">"</span>
+                tanzu telemetry update <span class="nt">--entitlement-account-number</span> <span class="nv">$NON_DEFAULT_EAN</span>
+                <span class="p">;;</span>
+            <span class="k">*</span><span class="p">)</span>
+                <span class="nb">echo</span> <span class="s2">"Invalid option. No action for EAN taken"</span>
+                <span class="p">;;</span>
+        <span class="k">esac</span>
+<span class="k">fi
+
+</span><span class="nv">DEPLOYMENT_YAML</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tanzu-operational-data-service
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: tods-dev-reg-creds
+  namespace: tanzu-operational-data-service
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: </span><span class="nv">$DOCKER_CONFIG_JSON_BASE64</span><span class="sh">
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tods-service-account
+  namespace: tanzu-operational-data-service
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: resource-lister
+rules:
+  - apiGroups: ["", "metrics.k8s.io"]
+    resources: ["nodes", "pods", "namespaces"]
+    verbs: ["list", "get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tods-resource-lister-binding
+subjects:
+  - kind: ServiceAccount
+    name: tods-service-account
+    namespace: tanzu-operational-data-service
+roleRef:
+  kind: ClusterRole
+  name: resource-lister
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: configmap-viewer
+  namespace: vmware-system-telemetry
+rules:
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: configmap-viewer-binding
+  namespace: vmware-system-telemetry
+subjects:
+  - kind: ServiceAccount
+    name: tods-service-account
+    namespace: tanzu-operational-data-service
+roleRef:
+  kind: Role
+  name: configmap-viewer
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kube-system-namspace-viewer
+  namespace: kube-system
+rules:
+  - apiGroups: [""]
+    resources: ["namespaces"]
+    verbs: ["get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kube-system-namspace-viewer-binder
+  namespace: kube-system
+subjects:
+  - kind: ServiceAccount
+    name: tods-service-account
+    namespace: tanzu-operational-data-service
+roleRef:
+  kind: Role
+  name: kube-system-namspace-viewer
+  apiGroup: rbac.authorization.k8s.io
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: tanzu-operational-data-service-pv-claim
+  namespace: tanzu-operational-data-service
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Mi
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tanzu-operational-data-deployment
+  namespace: tanzu-operational-data-service
+spec:
+  serviceName: "tanzu-operational-data-service-api"
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: tanzu-operational-data-service
+  template:
+    metadata:
+      name: tanzu-operational-data
+      namespace: tanzu-operational-data-service
+      labels:
+        app.kubernetes.io/name: tanzu-operational-data-service
+    spec:
+      serviceAccountName: tods-service-account
+      containers:
+        - name: tanzu-operational-data-service
+          image: dev.registry.pivotal.io/tanzu-portfolio-insights/tanzu-usage-service/tanzu-usage-service-exploration:</span><span class="nv">$TODS_VERSION</span><span class="sh">
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /data
+              name: tanzu-operational-data-service-pv-storage
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SEND_TO_SUPERCOLLIDER
+              value: "True"
+            - name: SEND_TO_PROD
+              value: "False"
+      imagePullSecrets:
+        - name: tods-dev-reg-creds
+      volumes:
+        - name: tanzu-operational-data-service-pv-storage
+          persistentVolumeClaim:
+            claimName: tanzu-operational-data-service-pv-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tanzu-operational-data-service-api
+  namespace: tanzu-operational-data-service
+spec:
+  selector:
+    app.kubernetes.io/name: tanzu-operational-data-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+</span><span class="no">EOF
+</span><span class="si">)</span>
+
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$DEPLOYMENT_YAML</span><span class="s2">"</span> <span class="o">&gt;</span> tanzu-operational-data-service-deployment.yaml
+
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Deploying Tanzu Operational Data Service via kapp</span><span class="se">\n</span><span class="s2">"</span>
+
+kapp deploy <span class="nt">-a</span> tanzu-operational-data-service <span class="nt">-f</span> tanzu-operational-data-service-deployment.yaml
+
+<span class="nb">rm </span>tanzu-operational-data-service-deployment.yaml
+
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> --- Tanzu Operational Data Service installed successfully --- </span><span class="se">\n\n</span><span class="s2">"</span>
+
+</code></pre></div><h3 id='what-the-script-does'>What the script does</h3>
+<ol>
+<li>Prompts for <code>Username</code> and <code>Password</code> to the <code>dev.registry.pivotal.io</code> registry
+
+<ul>
+<li>This is used to generate a <code>.dockerconfigjson</code> that is used to make a <code>Secret</code> for pulling down the TODS image</li>
+</ul></li>
+<li>Prompts to create an Entitlement Account Number (EAN)
+
+<ul>
+<li>EAN is used to identify the operational data that is collected and sent back to telemetry</li>
+<li>EAN is added to a <code>ConfigMap</code> in the <code>vmware-system-telemetry</code> namespace via <code>tanzu telemetry update --entitlement-account-number &lt;EAN&gt;</code></li>
+<li>The default EAN is <code>987654321</code> and this is the defaulted EAN in the script</li>
+</ul></li>
+<li>Deploys TODS
+
+<ul>
+<li>Deploys TODS via <code>kapp deploy -a tanzu-operational-data-service -f tanzu-operational-data-service-deployment.yaml</code></li>
+</ul></li>
+</ol>
+<h3 id='to-use-the-script'>To use the script</h3>
+<ol>
+<li>Copy the script from either
+
+<ul>
+<li>The code window here</li>
+<li>In the repo under <code>scripts/tanzu-operational-usage-service-install-script.sh</code></li>
+</ul></li>
+<li>Paste in a location to deploy from
+
+<ul>
+<li>i.e. <code>pbpaste &gt; /path/to/tanzu-operational-usage-service-install-script.sh</code></li>
+</ul></li>
+<li>Run: <code>chmod +x /path/to/tanzu-operational-usage-service-install-script.sh</code> to make the script runnable</li>
+<li>Point to the Kubernetes cluster that TODS will be deployed on
+
+<ul>
+<li>i.e. Set the <code>KUBECONFIG</code> environment variable</li>
+</ul></li>
+<li>Run the script and follow the prompts</li>
+</ol>
+<h1 id='usage'>Usage</h1>
+<p>The Operational Data for VMware Tanzu service supports the following operations:</p>
+
+<ol>
+<li>Viewing hourly grain usage data (<code>/data</code>)</li>
+<li>Obtaining a csv of historical hourly grain usage data</li>
+<li>Sending hourly grain usage data directly to VMware</li>
+<li>Viewing and editing the current configuration of the Operational Data Collector</li>
+<li>Viewing logs for recent operational data events (<code>/logs</code>)</li>
+</ol>
+<h2 id='data'>/data</h2>
+<p>The <code>/data</code> endpoint returns a dump of all the metrics in the SQLite database. It returns the data in a CSV format. </p>
+
+<blockquote>
+<p>To see the raw output:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl get <span class="nt">--raw</span> /api/v1/namespaces/tanzu-operational-data-service/services/tanzu-operational-data-service-api/proxy/data
+</code></pre></div>
+<blockquote>
+<p>To put the data in a CSV file:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl get <span class="nt">--raw</span> /api/v1/namespaces/tanzu-operational-data-service/services/tanzu-operational-data-service-api/proxy/data <span class="o">&gt;</span> tanzu-operational-data.csv
+</code></pre></div><h2 id='info'>/info</h2>
+<p>The <code>/info</code> endpoint returns the state of various configuration options:
+ - <code>Sending to Super Collider</code>: Boolean for TODS to try and send data to Supercollider.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl get <span class="nt">--raw</span> /api/v1/namespaces/tanzu-operational-data-service/services/tanzu-operational-data-service-api/proxy/info
+</code></pre></div><h2 id='logs'>/logs</h2>
+<blockquote>
+<p>To see log output</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl logs tanzu-operational-data-deployment-0 <span class="nt">-n</span> tanzu-operational-data-service
+</code></pre></div><h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+</blockquote>
+
+<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+
+<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: meowmeowmeow</code></p>
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all kittens.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET http://example.com/api/kittens</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>include_cats</td>
+<td>false</td>
+<td>If set to true, the result will also include cats.</td>
+</tr>
+<tr>
+<td>available</td>
+<td>true</td>
+<td>If set to false, the result will include kittens that have already been adopted.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific kitten.</p>
+
+<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific kitten.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to delete</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
